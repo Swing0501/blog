@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="/">管理首页</a></li>
+    <li><a href="/admin/link">友链列表</a></li>
+    <li><a href="/admin/link/add">添加友链</a></li>
+    <li><span>修改友链</span></li>
+</ol>
+
+<form role="form" method="post">
+    <div class="form-group">
+        <label for="name">友链名称：</label>
+        <input type="text" class="form-control" id="name" placeholder="请输入友链名称" name="name" value="{{link.name}}">
+    </div>
+
+    <div class="form-group">
+        <label for="addr">友链地址：</label>
+        <input type="text" class="form-control" id="addr" placeholder="请输入友链地址" name="addr" value="{{link.addr}}">
+    </div>
+
+    <div class="form-group">
+        <label for="description">友链简介：</label>
+        <textarea name="description" id="description" class="form-control" rows="3" placeholder="请输入友链简介">{{link.description}}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="img">请上传友链ico图标：</label>
+        <input type="file" id="img" name="img" value="{{link.img}}">
+    </div>
+
+    <button type="submit" class="btn-block" id="linkBtn">提  交</button>
+</form>
+{% endblock %}

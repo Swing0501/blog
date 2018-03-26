@@ -1,0 +1,70 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	background: url(../img/myself1.jpg) no-repeat 0 0;
+	background-size: cover;
+	background-size: 100% 100%; 
+	background-attachment: fixed;
+}
+#registerBox{
+	display: none;
+}
+.colWarning{
+	text-align: center;
+	color: #AA442F;
+}
+.textRight{
+	float: right;
+}
+#userInfo{
+	margin: 10% auto;
+	width: 30%;
+	height: 300px;
+}
+#loginBox,#registerBox{
+	margin: 10% auto;
+	width: 25%;
+	height: 60%;
+}
+#userInfo .username{
+	font-size: 18px;
+	color: #c0726e;
+}
+#userInfo .userico{
+	color: #AA442F;
+	margin-right:10px;
+}
+#userInfo .info{
+	font-size: 16px;
+
+}
+#userInfo #logout{
+	color:#c0726e;
+}
+#userInfo #logout:hover{
+	color: #AA442F;
+}
+
+/* 雪花效果 */
+@keyframes snow{
+	0% {
+		background-position: 0 0, 0 0;
+	}
+	100% {
+		background-position: 500px 500px, 1000px 500px;
+	}
+}
+
+#snowMask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../img/snow1.png'),url('../img/snow2.png');
+	animation: 5s snow linear infinite;
+	pointer-events: none;
+	z-index: 99;
+}

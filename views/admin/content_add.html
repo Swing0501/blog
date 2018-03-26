@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<ol class="breadcrumb">
+    <li><span>内容管理</span></li>
+    <li><a href="/admin/content">内容列表</a></li>
+    <li><span>内容添加</span></li>
+</ol>
+
+<form role="form" method="post">
+    <div class="form-group">
+        <label for="title">标题：</label>
+        <input type="text" class="form-control" id="title" placeholder="请输入内容标题" name="title">
+    </div>
+
+    <div class="form-group">
+        <label for="content">内容：</label>
+        <textarea name="content" id="content" class="form-control" rows="15" placeholder="请输入内容">{{content.content}}</textarea>
+    </div>
+
+    <!--<div class="form-group">
+        <label for="content">文章主体：</label>
+        <script id="content" name="content" type="text/plain">
+            这里写你的初始化内容
+        </script>
+        <script type="text/javascript">
+            var ue = UE.getEditor('content');
+        </script>
+    </div>-->
+
+    <div class="form-group category">
+        <label for="category">分类选择（单选）：</label>
+        <select name="category" id="category" class="form-control">
+            {%for category in categories%}
+            <option value="{{category.id}}">{{category.name}}</option>
+            {%endfor%}
+        </select>
+    </div>
+
+    <!--<div class="form-group">
+        <label for="tag">标签（可多个）：</label>
+        <textarea name="tag" id="tag" class="form-control" rows="3" placeholder="请输入标签，多个标签以空格隔开"></textarea>
+        &lt;!&ndash;<input type="text" class="form-control" id="tag" placeholder="请输入标签，多个标签以空格隔开" name="tag">&ndash;&gt;
+    </div>-->
+    <div class="form-group">
+        <label for="description">简介（前台展示）：</label>
+        <textarea name="description" id="description" class="form-control" rows="5" placeholder="请输入内容简介"></textarea>
+    </div>
+    <!--<div class="form-group">
+        <label for="img">请上传展示图片：</label>
+        <input type="file" id="img" name="img">
+    </div>-->
+    <br>
+    <button type="submit" class="btn-block" id="contentBtn">提  交</button>
+</form>
+{% endblock %}

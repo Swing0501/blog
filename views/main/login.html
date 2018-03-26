@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/login.css">
+    <script type="text/javascript" src="/public/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/public/js/bootstrap.js"></script>
+    <script src="/public/js/js.js"></script>
+    <script src="/public/js/login.js"></script>
+    <script src="/public/js/top_search.js"></script>
+    <title>Swing</title>
+</head>
+<body>
+<div class="container login">
+
+    <!--登录状态-->
+    {% if userInfo._id%}
+    <div class="panel panel-success" id="userInfo">
+        <div class="panel-heading">
+            <h3 class="panel-title">用户信息</h3>
+        </div>
+        <div class="panel-body">
+            <p>
+                <span class="glyphicon glyphicon-heart userico"></span>
+                <span class="username">{{decodeURI(userInfo.username)}}</span>
+            </p>
+            {% if userInfo.isAdmin %}
+            <p>
+                <span class="info isAdmin">您好，管理员！！</span>
+                <a href="/admin">进入管理</a>
+            </p>
+            {% else %}
+            <p>
+                <span class="info">您好，欢迎来到我的博客！！</span>
+            </p>
+            {% endif %}
+            <p>
+                <span><a href="javascript:;" id="logout">退出 | </a></span>
+                <span><a href="/" id="logout"> 返回到Swing</a></span>
+            </p>
+        </div>
+    </div>
+    {% else %}
+    <!--登录-->
+    <div class="panel panel-success" id="loginBox">
+        <div class="panel-heading">
+            <h3 class="panel-title">登录</h3>
+        </div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">用户名</label>
+                    <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="username">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">密码</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 记住我的登录信息
+                    </label>
+                </div>
+            </form>
+            <button class="btn btn-default btn-lg btn-block">登 录</button>
+            <br>
+            <p class="textRight">还没注册？<a href="javascript:;" class="colMint">马上注册</a>　</p>
+            <p class="colWarning"></p>
+        </div>
+    </div>
+    <div class="panel panel-success" id="registerBox">
+        <div class="panel-heading">
+            <h3 class="panel-title">注册</h3>
+        </div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">用户名</label>
+                    <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="username">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">密码</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">确认</label>
+                    <input type="password" name="repassword" class="form-control" id="exampleInputPassword1" placeholder="password">
+                </div>
+            </form>
+            <button class="btn btn-default btn-lg btn-block">注 册</button>
+            <br>
+            <p class="textRight">已有账号？<a href="javascript:;" class="colMint">马上登录</a>　</p>
+            <p class="colWarning"></p>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+<div id="snowMask"></div>
+
+</body>
+</html>

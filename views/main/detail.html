@@ -1,0 +1,78 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="blogList detail" id="detail">
+    <h1>{{content.title}}</h1>
+    <p class="colDefault">
+        时间：<span class="colInfo">{{content.addTime|date('Y年m月d日 H:i:s', -8*60)}}</span> -
+        阅读：<span class="colInfo">{{content.views}}</span> -
+        评论：<span class="colInfo">{{content.comments.length}}</span>
+    </p>
+    <dfn>
+        {{content.content}}
+    </dfn>
+</div>
+<div class="box">
+    <div class="sendbox">
+        <h4>发表评论</h4>
+        <div>一共有<span id="messageCount"></span>条评论</div>
+        <div class="send_sign">
+            <div class="input-group input-group-lg div1">
+                <span class="input-group-addon" id="sizing-addon1">昵称<span class="mark1">*</span></span>
+                <input type="text" class="form-control critic" value="{{userInfo.username}}">
+            </div>
+            <div class="input-group input-group-lg div1">
+                <span class="input-group-addon" id="sizing-addon2">邮箱</span>
+                <input type="text" class="form-control send_email" >
+            </div>
+            <div class="input-group input-group-lg div1">
+                <span class="input-group-addon" id="sizing-addon3">网址</span>
+                <input type="text" class="form-control send_url" placeholder="网址（http://">
+            </div>
+        </div>
+        <div>
+            <textarea class="send_content" placeholder="期待您的评论"  id="messageContent"></textarea><br>
+            <input type="hidden" id="contentId" value="{{content.id}}">
+            <a href="#" title="插入图片" class="pull-right send_img"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a>
+            <a href="#" title="插入表情" class="pull-right send_emo"><img src="/public/img/emo.jpg"></a>
+            {% if userInfo._id %}
+            <button type="submit" class="btn-block send_btn" id="messageBtn">提交评论</button>
+            {%else%}
+            <button type="submit" class="btn-block send_btn">你还没有登录，请先登录！</button>
+            {%endif%}
+        </div>
+    </div>
+</div>
+<div class="review_area" id="messageList">
+    <!--<div class="review_box">
+        <div class="review">
+            <img src="/public/img/aboutme2.JPG" class="review_img">
+            <span class="review_name">Swing</span>
+            <time>2018/1/17下午5:37:35</time>
+            <input type="button" value="回复" class="review_btn  pull-right" >
+            <p class="review_content">博主您好</p>
+        </div>
+    </div>
+    <div class="replay_box">
+        <div class="replay">
+            <img src="/public/img/aboutme2.JPG" class="review_img">
+            <span class="review_name">Swing</span>
+            <time>2018/1/17下午5:37:35</time>
+            <input type="button" value="回复" class="review_btn pull-right">
+            <p class="review_content">博主您好</p>
+        </div>
+    </div>-->
+</div>
+<!--分页-->
+<div class="pager">
+    <ul class="clear">
+        <li class="previous">
+             <a href="/"><<<</a>
+        </li>
+        <li></li>
+        <li class="next">
+            <a href="/">>>></a>
+        </li>
+    </ul>
+</div>
+<script src="/public/js/comment.js"></script>
+{%endblock%}

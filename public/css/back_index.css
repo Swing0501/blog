@@ -1,0 +1,191 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	padding-top: 70px;
+}
+li{
+	list-style: none;
+}
+img{
+	display: inline-block;
+}
+a:hover{
+	text-decoration: none;
+}
+.navbarMain{
+	background-color: #d05942;
+}
+
+.navbarMain a{
+    color:#fff;
+	display: inline-block;
+}
+.nav_size span{
+	margin-right: 15px;
+}
+.self{
+	float: right;
+}
+.self img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-left: 10px;
+}
+.aboutme{
+	display: none;
+	position: absolute;
+	right:  10px;
+	top: 50px;
+	border:1px solid #000;
+	width: 250px;
+	height: 100px;
+	background-color: #222;
+}
+.aboutme ul{
+	margin-top: 20px;
+	color: #ccc;
+}
+.aboutme ul img{
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 0px 30px 20px 20px;
+	border-radius: 50%;
+}
+.aboutme ul a{
+	color: #ccc;
+}
+.aboutme ul a:hover{
+	color: #fff;
+}
+.self a{
+	display: inline-block;
+	padding-top: 13px;
+	font-size: 16px;
+	color: #ccc;
+}
+.self a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+.summer{
+	font-size: 16px;
+}
+.summer li{
+	margin-bottom: 5px;
+}
+.summer span{
+	margin-right: 15px;
+}
+/*.menue{
+	height: 600px;
+	background: #222;
+	font-size: 16px;
+}
+.menue span{
+	margin-right: 15px;
+}
+.menue a{
+	color: #fff;
+}
+.menue a:hover{
+	color:#337ab7;
+}
+.menue_ul {
+	margin-left: 40px;
+	font-size: 14px;
+}
+.menue .dropdown-menu{
+	width: 100%;
+	background: #222;
+}
+.menue .dropdown-menu a{
+	color:#fff;
+	font-size: 14px;
+}
+.menue_gustbook,.gustbook_title,.menue_article,.title_article{
+	margin-top: 40px;
+}*/
+.play a{
+
+	margin-left: 40px;
+}
+.review div{
+	border-bottom: 1px dotted #9d9d9d;
+	padding: 15px 5px 0 5px;
+}
+.review img{
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 0px 30px 20px 20px;
+	border-radius: 50%;
+}
+.title{
+	background-color: #9d9d9d
+}
+.aside a[class^=btn]{
+	margin-bottom: 10px;
+}
+.aside a:nth-of-type(2){
+
+}
+.aside .aside_con .bold{
+	font-weight: bold;
+	color: #000;
+}
+.aside .aside_show{
+	display: block;
+	margin-bottom: 5px;
+}
+.aside .aside_hide{
+	display: none;
+}
+.aside_sh{
+	margin-left: 5px;
+}
+.aside_con p span{
+	margin-right: 10px;
+	color: #ccc;
+}
+.aside_foot{
+	height: 50px;
+}
+.classic{
+	height: 280px;
+}
+#opp{
+	height: 200px;
+}
+#opp option{
+	line-height: 20px;
+	margin:100px;
+}
+.form-group img{
+	height: 50px;
+	width: 50px;
+	margin:10px;
+}
+.category{
+	margin: 140px 0px 50px 0px;
+}
+#content{
+	height: 320px;
+}
+#contentBtn{
+	margin: 10px 0px 50px 0px;
+	padding:5px 0;
+	border-radius: 5px;
+	background-color: #337ab7;
+	color:#fff;
+}
+#linkBtn{
+	margin: 20px 0px 50px 0px;
+	padding:5px 0;
+	border-radius: 5px;
+	background-color: #337ab7;
+	color:#fff;
+}
